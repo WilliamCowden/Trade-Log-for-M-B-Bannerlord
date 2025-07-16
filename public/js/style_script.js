@@ -1,0 +1,1 @@
+// this file if for updating 'inventory-info' fields on the client-side HTML

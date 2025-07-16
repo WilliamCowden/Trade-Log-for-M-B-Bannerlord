@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+article {
+    background-color: rgb(235, 235, 235);
+} 
+
+#main-form {
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.inventory-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-form-input-list {
+    display: flex;
+    flex-direction: column;
+    width: 40ch;
+}
+.main-form-inputs {
+    width: 100%;
+}
+.transaction-type-container {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+.transaction-type {
+    font-weight: bolder;
+}
+
+.inventory-data {
+    
+}

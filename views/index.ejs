@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Tye's Trade Log</title>
+</head>
+<body>
+    
+    <nav>
+
+    </nav>
+    
+    <article>
+        <form id="main-form" action="/update" method="post">
+            <ul class="inventory-list">
+                <% locals.inventory.forEach(i => { %>
+                
+                <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
+                <input type="radio" class="inventory-items" name="inventory_item" id="<%=i.name%>" value="<%=i.name%>">
+
+                <% }); %>
+            </ul>
+            
+            <div class="main-form-input-list">
+                <input class="main-form-inputs" type="number" name="quantity" id="quantity" placeholder="quantity">
+                <input class="main-form-inputs" type="number" name="price" id="price" placeholder="price">
+                <div class="transaction-type-container">
+                    <label for="buy">BUY</label>
+                    <input class="transaction-type" type="radio" name="transaction_type" id="buy" value="buy">
+                    <label for="sell">SELL</label>
+                    <input class="transaction-type" type="radio" name="transaction_type" id="sell" value="sell">
+                </div>
+                <input class="main-form-inputs" type="submit" value="enter">
+            </div>
+
+            <ul class="inventory-data">
+                <% locals.inventory.forEach(i => { %>
+                
+                <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
+                <input type="radio" class="inventory-items" name="inventory_item" id="<%=i.name%>" value="<%=i.name%>">
+
+                <% }); %>
+            </ul>
+
+        </form>
+
+    </article>
+
+    <script src="/js/style_script.js"></script>
+</body>
+</html>
