@@ -15,12 +15,14 @@
     <article>
         <form id="main-form" action="/update" method="post">
             <ul class="inventory-list">
-                <% locals.inventory.forEach(i => { %>
-                
-                <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
-                <input type="radio" class="inventory-items" name="inventory_item" id="<%=i.name%>" value="<%=i.name%>">
+                <% if (locals.inventory) { %>
+                    <% locals.inventory.forEach(i => { %>
+                    
+                        <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
+                        <input type="radio" class="inventory-items" name="inventory_item" id="<%=i.name%>" value="<%=i.name%>">
 
-                <% }); %>
+                    <% }); %>
+                <% }; %>
             </ul>
             
             <div class="main-form-input-list">
