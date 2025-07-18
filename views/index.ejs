@@ -36,12 +36,7 @@
             </div>
 
             <ul class="inventory-data">
-                <% locals.inventory.forEach(i => { %>
                 
-                <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
-                <input type="radio" class="inventory-items" name="inventory_item" id="<%=i.name%>" value="<%=i.name%>">
-
-                <% }); %>
             </ul>
 
         </form>
