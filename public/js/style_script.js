@@ -1,1 +1,3 @@
-// this file if for updating 'inventory-info' fields on the client-side HTML
+const test = document.getElementById("test");
+
+test.innerText = "<%= locals.inventory[0].name %>";

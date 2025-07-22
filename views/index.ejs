@@ -7,27 +7,27 @@
     <title>Tye's Trade Log</title>
 </head>
 <body>
-    
+    <script src="/js/style_script.js"></script>
     <nav>
 
     </nav>
     
     <article>
         <form id="main-form" action="/update" method="post">
-            <ul class="inventory-list">
+            <ul class="product-list">
                 <% if (locals.inventory) { %>
                     <% locals.inventory.forEach(i => { %>
                     
                         <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
-                        <input type="radio" class="inventory-items" name="inventory_item" id="<%=i.name%>" value="<%=i.name%>">
+                        <input type="radio" class="product-names" name="product_name" id="<%=i.name%>" value="<%=i.name%>">
 
                     <% }); %>
                 <% }; %>
             </ul>
             
             <div class="main-form-input-list">
-                <input class="main-form-inputs" type="number" name="quantity" id="quantity" placeholder="quantity">
-                <input class="main-form-inputs" type="number" name="price" id="price" placeholder="price">
+                <input class="main-form-inputs" type="number" name="product_quantity" id="product_quantity" placeholder="quantity">
+                <input class="main-form-inputs" type="number" name="product_price" id="product_price" placeholder="price">
                 <div class="transaction-type-container">
                     <label for="buy">BUY</label>
                     <input class="transaction-type" type="radio" name="transaction_type" id="buy" value="buy">
@@ -38,13 +38,13 @@
             </div>
 
             <ul class="inventory-data">
-                
+                <p id="test"><%= locals.inventory[0].name %></p>
             </ul>
 
         </form>
 
     </article>
 
-    <script src="/js/style_script.js"></script>
+    
 </body>
 </html>
