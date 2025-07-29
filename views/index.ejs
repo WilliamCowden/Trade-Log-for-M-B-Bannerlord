@@ -18,7 +18,7 @@
                 <% if (locals.inventory) { %>
                     <% locals.inventory.forEach(i => { %>
                     
-                        <label for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
+                        <label class="product-names" for="<%=i.name%>"><%=i.stock%> <%=i.name%></label>
                         <input type="radio" class="product-names" name="product_name" id="<%=i.name%>" value="<%=i.name%>">
 
                     <% }); %>
@@ -28,6 +28,13 @@
             <div class="main-form-input-list">
                 <input class="main-form-inputs" type="number" name="product_quantity" id="product_quantity" placeholder="quantity">
                 <input class="main-form-inputs" type="number" name="product_price" id="product_price" placeholder="price">
+                <!--TEST-->
+                <select name="merchant" id="merchant-select">
+                    <option value="test1">Test 1</option>
+                    <option value="test2">Test 2</option>
+                    <option value="test3">Test 3</option>
+                </select>
+                <!--TEST-->
                 <div class="transaction-type-container">
                     <label for="buy">BUY</label>
                     <input class="transaction-type" type="radio" name="transaction_type" id="buy" value="buy">
@@ -42,6 +49,25 @@
             </ul>
 
         </form>
+
+        <div class="log-container">
+            <table class="log-table">
+                <tr class="table-header-row">
+                    <th class="table-header">pid</th>
+                    <th class="table-header">#</th>
+                    <th class="table-header">$</th>
+                    <th class="table-header">merchant</th>
+                </tr>
+                <% locals.log.forEach(i => { %>
+                <tr class="<%=i.transaction_type%> table-row">
+                    <td class="table-data"><%=i.name%></td>
+                    <td class="table-data"><%=i.quantity%></td>
+                    <td class="table-data"><%=i.price%></td>
+                    <td class="table-data"><%=i.merchant%></td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
 
     </article>
 
